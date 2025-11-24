@@ -14,29 +14,51 @@ body {
   overflow-x: hidden;
 }
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 40px 20px;
-  animation: fadeIn 2s ease-in-out;
-}
-
 .hero-frame {
-  width: 100%;          /* full width of page */
-  height: 300px;        /* fixed frame height */
+  width: 100%;           /* full width */
+  height: 300px;         /* fixed height for desktop */
   overflow: hidden;
   position: relative;
 }
 
 /* Video inside frame */
 .hero-video {
-  width: 100%;          /* full width of frame */
-  height: auto;         /* auto height to maintain ratio */
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  animation: scrollVideo 20s ease-in-out infinite alternate;
+  object-fit: cover;     /* fills the frame without distortion */
   filter: sepia(25%);
+}
+
+/* Optional: adjust hero height on smaller screens */
+@media screen and (max-width: 768px) {
+  .hero-frame {
+    height: 200px;       /* smaller height for tablets and phones */
+  }
+
+  .title {
+    font-size: 32px;     /* smaller title */
+  }
+
+  .subtitle {
+    font-size: 16px;     /* smaller subtitle */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-frame {
+    height: 180px;       /* even smaller for mobile */
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
 }
 
 /* Titles */
