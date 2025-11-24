@@ -1,0 +1,149 @@
+/* Mocha Moose Theme */
+:root {
+  --mocha-dark: #4b3a2f;
+  --mocha-medium: #7a6048;
+  --mocha-light: #c7b199;
+  --mocha-cream: #f3e9df;
+}
+
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: var(--mocha-cream);
+  color: var(--mocha-dark);
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-frame {
+  width: 100%;          /* full width of page */
+  height: 300px;        /* fixed frame height */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Video inside frame */
+.hero-video {
+  width: 100%;          /* full width of frame */
+  height: auto;         /* auto height to maintain ratio */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: scrollVideo 20s ease-in-out infinite alternate;
+  filter: sepia(25%);
+}
+
+/* Titles */
+.title {
+  font-size: 42px;
+  margin-top: 20px;
+  color: var(--mocha-dark);
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: var(--mocha-medium);
+}
+
+/* Sections */
+.details, .rsvp, .gallery {
+  text-align: center;
+  padding: 50px 20px;
+  animation: fadeUp 1.5s ease-out;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+/* RSVP */
+form input, form button {
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  width: 80%;
+  max-width: 350px;
+  border-radius: 6px;
+  border: 1px solid var(--mocha-medium);
+  font-size: 16px;
+}
+
+form button {
+  background: var(--mocha-dark);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: var(--mocha-medium);
+}
+
+/* Animated Decor */
+.animated-decor {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: var(--mocha-light);
+  opacity: 0.4;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: floatDecor 6s infinite alternate;
+  z-index: -1;
+}
+
+.decor-1 {
+  top: 10%;
+  left: -50px;
+}
+
+.decor-2 {
+  bottom: 10%;
+  right: -50px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+@keyframes floatDecor {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(-20px) scale(1.1); }
+}
+
+/* Scroll video inside fixed frame */
+@keyframes scrollVideo {
+  0% { top: 0; }
+  50% { top: -150px; } /* adjust if video is taller than frame */
+  100% { top: 0; }
+}
