@@ -56,7 +56,7 @@ body {
 .details, .rsvp, .gallery {
   text-align: center;
   padding: 50px 20px;
-  animation: fadeUp 1.5s ease-out;
+  /*animation: fadeUp 1.5s ease-out;*/
 }
 
 /* Gallery */
