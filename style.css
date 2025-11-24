@@ -35,7 +35,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  animation: scrollVideo 20s ease-in-out infinite alternate;
+  /*animation: scrollVideo 20s ease-in-out infinite alternate;*/
   filter: sepia(25%);
 }
 
